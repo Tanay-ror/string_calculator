@@ -29,5 +29,12 @@ describe StringCalculator do
         expect(calculator.sum('1,2,3,4,5,6,7,8,9,10')).to eq(55)
       end
     end
+
+    context 'when input contains custom delimiter' do
+      it 'returns the sum of all numbers' do
+        calculator = StringCalculator.new
+        expect(calculator.sum("//;\n1;2;3;5")).to eq(11)
+      end
+    end
   end
 end
