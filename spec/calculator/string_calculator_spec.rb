@@ -1,3 +1,5 @@
+require 'string_calculator'
+
 describe StringCalculator do
   describe '#sum' do
     context 'when given input is an empty string' do
