@@ -1,5 +1,7 @@
 class StringCalculator
   def sum(number)
+    return "Invalid Input" if check_invalid_input?(number)
+
     raise "Negative numbers not allowed: #{find_negative_numbers(number)}" if contains_negative_numbers?(number)
 
     return 0 if number.empty?
@@ -18,6 +20,10 @@ class StringCalculator
   def find_negative_numbers(number)
     negative_numbers = number.split(/[,\n]/).select { |num| num.to_i.negative? }
     negative_numbers.join(', ')
+  end
+
+  def check_invalid_input?(number)
+    number.end_with?("\\n")
   end
 
   def extract_delimiter(number)
