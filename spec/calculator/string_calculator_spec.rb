@@ -15,5 +15,12 @@ describe StringCalculator do
         expect(calculator.sum('1')).to eq(1)
       end
     end
+
+    context 'when given input contains two numbers separated by comma' do
+      it 'returns the sum of the numbers' do
+        calculator = StringCalculator.new
+        expect(calculator.sum('2,3,6')).to eq(11)
+      end
+    end
   end
 end
